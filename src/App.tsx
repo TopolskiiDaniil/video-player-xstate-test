@@ -1,13 +1,16 @@
 import "./App.css";
+import { PlayerModal } from "./components/PlayerModal/PlayerModal";
 import { usePlayerMachine } from "./hooks/usePlayerMachine";
-import { type ReactNode } from "react";
+import { Button } from "antd";
 
 function App() {
   const [state, send] = usePlayerMachine();
 
   return (
-    <div>
-      <h1>Player Machine Active State: {state.value as ReactNode}</h1>
+    <div style={{ padding: 20 }}>
+      <Button onClick={() => send({ type: "PLAY" })}>Открыть плеер</Button>
+
+      <PlayerModal state={state} send={send} />
     </div>
   );
 }

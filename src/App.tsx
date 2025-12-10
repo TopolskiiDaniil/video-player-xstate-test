@@ -7,7 +7,7 @@ function App() {
   const [state, send] = usePlayerMachine();
 
   return (
-    <div style={{ padding: 20 }}>
+    <div>
       <Button onClick={() => send({ type: "PLAY" })}>Открыть плеер</Button>
 
       <PlayerModal state={state} send={send} />

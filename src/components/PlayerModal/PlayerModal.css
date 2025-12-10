@@ -1,0 +1,14 @@
+.ant-modal-container {
+  padding: 0 !important;
+}
+
+.ant-modal-container .ant-modal-header,
+.ant-modal-container .ant-modal-footer {
+	margin: 0;
+}
+
+.ant-modal-container .ant-modal-body {
+	width: 100%;
+	padding: 24px;
+}
+

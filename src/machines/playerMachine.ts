@@ -5,7 +5,7 @@ export const playerMachine = createMachine(
     id: "player",
     initial: "closed",
     context: {
-      playing: false,
+      playing: true,
     },
     states: {
       closed: {
@@ -20,7 +20,7 @@ export const playerMachine = createMachine(
 
       opened: {
         on: {
-          CLOSE: "closed",
+          CLOSE: { target: "closed", actions: "pause" },
           MINIMIZE: "mini",
           PLAY: { actions: "play" },
           PAUSE: { actions: "pause" },
@@ -30,7 +30,7 @@ export const playerMachine = createMachine(
       mini: {
         on: {
           EXPAND: "opened",
-          CLOSE: "closed",
+          CLOSE: { target: "closed", actions: "pause" },
           PLAY: { actions: "play" },
           PAUSE: { actions: "pause" },
         },

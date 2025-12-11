@@ -1,6 +1,6 @@
 import { ToggleZoomButton } from "../UI/ToggleZoomButton";
 import { TogglePlayPauseButton } from "../UI/TogglePlayPauseButton";
-import "./PlayerModalFooter.css";
+import "../PlayerModalFooter/playerModalFooter.css";
 
 interface PlayerModalFooterProps {
   isMini: boolean;

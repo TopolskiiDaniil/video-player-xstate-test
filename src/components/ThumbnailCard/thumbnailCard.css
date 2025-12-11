@@ -1,0 +1,9 @@
+.thumbnail-card{
+	width: fit-content;
+	height: fit-content;;
+}
+
+.thumbnail-card-button{
+	width: 300px;
+	height: 150px;
+}

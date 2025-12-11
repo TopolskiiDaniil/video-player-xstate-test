@@ -13,9 +13,10 @@ type PlayerEvent = EventFrom<typeof playerMachine>;
 interface PlayerModalProps {
   state: PlayerState;
   send: (event: PlayerEvent) => void;
+  videoSrc: string;
 }
 
-export const PlayerModal = ({ state, send }: PlayerModalProps) => {
+export const PlayerModal = ({ state, send, videoSrc }: PlayerModalProps) => {
   const width = state.matches("mini") ? 500 : 1000;
 
   const isModalOpen = state.matches("opened") || state.matches("mini");
@@ -55,7 +56,7 @@ export const PlayerModal = ({ state, send }: PlayerModalProps) => {
     >
       <ReactPlayer
         ref={playerRef}
-        src="https://cdn.flowplayer.com/d9cd469f-14fc-4b7b-a7f6-ccbfa755dcb8/hls/383f752a-cbd1-4691-a73f-a4e583391b3d/playlist.m3u8"
+        src={videoSrc}
         playing={state.context.playing}
         width="100%"
         height="100%"

@@ -14,9 +14,9 @@ export const ToggleZoomButton = ({
     <>
       <Button shape="circle" onClick={onClick}>
         {isMini ? (
-          <ShrinkOutlined style={{ fontSize: "16px" }} />
-        ) : (
           <ExpandAltOutlined style={{ fontSize: "16px" }} />
+        ) : (
+          <ShrinkOutlined style={{ fontSize: "16px" }} />
         )}
       </Button>
     </>
